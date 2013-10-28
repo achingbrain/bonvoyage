@@ -1,0 +1,26 @@
+{
+	"author": "Alex Potsides",
+	"name": "bonvoyage",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"test": "istanbul cover nodeunit test"
+	},
+	"dependencies": {
+		"mdns2": "~2.1",
+		"defaults": "~1.0",
+		"winston": "~0.7",
+		"seaport": "~1.7"
+	},
+	"devDependencies": {
+		"nodeunit": "~0.8",
+		"jsmockito": "~1.0",
+		"jshamcrest": "~0.7",
+		"istanbul": "~0.1"
+	},
+	"description": "Seaport service discovery and registering via mDNS/Bonjour/zeroconf",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/achingbrain/bonvoyage.git"
+	}
+}
