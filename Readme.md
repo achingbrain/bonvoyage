@@ -1,6 +1,4 @@
-# bonvoyage
-
-[![Dependency Status](https://david-dm.org/achingbrain/bonvoyage.png)](https://david-dm.org/achingbrain/bonvoyage)
+# bonvoyage [![Dependency Status](https://david-dm.org/achingbrain/bonvoyage.png)](https://david-dm.org/achingbrain/bonvoyage)
 
 [seaport](https://github.com/substack/seaport) is a great service for service discovery on a network, but how do you find the seaport server?  Enter [mDNS](http://en.wikipedia.org/wiki/Multicast_DNS) - this lets us broadcast the availability of a seaport server on the network.
 
