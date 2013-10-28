@@ -46,6 +46,8 @@ var bonvoyage = require("bonvoyage");
 
 var bonvoyageClient = new bonvoyage.Client();
 bonvoyageClient.find(function(seaport) {
+
+	// found seaport, now use it as normal
 	seaport.get('http@1.0.x', function (services) {
 		console.info("http://" + services[0].host + ":" + services[0].port);
 	});
