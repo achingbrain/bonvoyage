@@ -45,7 +45,7 @@ To find a seaport server, do the following:
 var bonvoyage = require("bonvoyage");
 
 var bonvoyageClient = new bonvoyage.Client();
-bonvoyageClient.find(function(seaport) {
+bonvoyageClient.find(function(error, seaport) {
 
 	// found seaport, now use it as normal
 	seaport.get('http@1.0.x', function (services) {

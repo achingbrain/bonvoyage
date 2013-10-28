@@ -28,10 +28,39 @@ module.exports["Client"] = {
 		var client = new Client({
 			serviceType: name
 		});
-		client.find(function() {
+		client.find(function(error, found) {
+			if(error) {
+				test.fail("An error was encountered while trying to find seaport", error);
+			}
+
+			if( ! found) {
+				test.fail("Seaport was not found");
+			}
+
 			clearTimeout(panicButton);
 
 			seaport.close();
+
+			client.stop();
+
+			test.done();
+		});
+	},
+
+	"Should time out when finding a seaport server": function( test ) {
+		var name = Math.random().toString(36).substring(2, 17);
+
+		var client = new Client({
+			serviceType: name
+		});
+		client.find(function(error, found) {
+			if( ! error) {
+				test.fail("An error was not encountered while trying to find seaport", error);
+			}
+
+			if(found) {
+				test.fail("Seaport should not have been found");
+			}
 
 			client.stop();
 
@@ -91,7 +120,6 @@ module.exports["Client"] = {
 		// make sure we don't wait forever..
 		var panicButton = setTimeout(function() {
 			test.fail("Did not create service once when seaport disappears and reappears");
-			browser.stop();
 			server.close();
 			test.done();
 		}, 10000);

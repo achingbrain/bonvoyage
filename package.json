@@ -1,7 +1,7 @@
 {
 	"author": "Alex Potsides",
 	"name": "bonvoyage",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"main": "index.js",
 	"scripts": {
 		"test": "istanbul cover nodeunit test"
